@@ -56,8 +56,8 @@ const createUser = (req, res, next) => {
 };
 
 const patchUser = (req, res, next) => {
-  const { name, about } = req.body;
-  User.findByIdAndUpdate(req.user._id, { name, about }, { runValidators: true, new: true })
+  const { name, email } = req.body;
+  User.findByIdAndUpdate(req.user._id, { name, email }, { runValidators: true, new: true })
     .orFail(() => {
       throw new BadRequest('Переданы некорректные данные');
     })

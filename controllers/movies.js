@@ -53,6 +53,9 @@ const createMovie = (req, res, next) => {
 const deleteMovie = (req, res, next) => {
   Movie.findById(req.params.movieId)
     .then((movie) => {
+      if (!movie) {
+        throw new NotFound('Фильм не найден');
+      }
       if (String(movie.owner) !== String(req.user._id)) {
         throw new Forbidden('Нельзя удалить чужой фильм');
       }
@@ -65,7 +68,7 @@ const deleteMovie = (req, res, next) => {
     .then((movie) => res.send({ data: movie }))
     .catch((err) => {
       if (err instanceof mongoose.CastError) {
-        return res.status(400).send({ message: 'id not found' });
+        return res.status(400).send({ message: err.message });
       }
       return next(err);
     });
