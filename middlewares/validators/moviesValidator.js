@@ -23,7 +23,7 @@ const postMovieValidator = celebrate({
       if (validator.isURL(value)) {
         return value;
       }
-      return helper.message('Невалидная ссылка');
+      return helper.message('Невалидная ссылка image');
     }).message({
       'any.required': 'image Обязательное поле',
     }),
@@ -31,7 +31,7 @@ const postMovieValidator = celebrate({
       if (validator.isURL(value)) {
         return value;
       }
-      return helper.message('Невалидная ссылка');
+      return helper.message('Невалидная ссылка trailer');
     }).message({
       'any.required': 'trailer Обязательное поле',
     }),
@@ -42,7 +42,7 @@ const postMovieValidator = celebrate({
       if (validator.isURL(value)) {
         return value;
       }
-      return helper.message('Невалидная ссылка');
+      return helper.message('Невалидная ссылка thumbnail ');
     }).message({
       'any.required': 'thumbnail Обязательное поле',
     }),
