@@ -5,19 +5,19 @@ const mongoose = require('mongoose');
 const postMovieValidator = celebrate({
   body: {
     country: Joi.string().required().messages({
-      'any.required': 'Обязательное поле',
+      'any.required': 'country Обязательное поле',
     }),
     director: Joi.string().required().messages({
-      'any.required': 'Обязательное поле',
+      'any.required': 'director Обязательное поле',
     }),
     duration: Joi.number().required().messages({
-      'any.required': 'Обязательное поле',
+      'any.required': 'duration Обязательное поле',
     }),
     year: Joi.number().required().messages({
-      'any.required': 'Обязательное поле',
+      'any.required': 'year Обязательное поле',
     }),
     description: Joi.string().required().messages({
-      'any.required': 'Обязательное поле',
+      'any.required': 'description Обязательное поле',
     }),
     image: Joi.string().required().custom((value, helper) => {
       if (validator.isURL(value)) {
@@ -25,7 +25,7 @@ const postMovieValidator = celebrate({
       }
       return helper.message('Невалидная ссылка');
     }).message({
-      'any.required': 'Обязательное поле',
+      'any.required': 'image Обязательное поле',
     }),
     trailer: Joi.string().required().custom((value, helper) => {
       if (validator.isURL(value)) {
@@ -33,10 +33,10 @@ const postMovieValidator = celebrate({
       }
       return helper.message('Невалидная ссылка');
     }).message({
-      'any.required': 'Обязательное поле',
+      'any.required': 'trailer Обязательное поле',
     }),
     movieId: Joi.number().required().messages({
-      'any.required': 'Обязательное поле',
+      'any.required': 'movieId Обязательное поле',
     }),
     thumbnail: Joi.string().required().custom((value, helper) => {
       if (validator.isURL(value)) {
@@ -44,13 +44,13 @@ const postMovieValidator = celebrate({
       }
       return helper.message('Невалидная ссылка');
     }).message({
-      'any.required': 'Обязательное поле',
+      'any.required': 'thumbnail Обязательное поле',
     }),
     nameRU: Joi.string().required().messages({
-      'any.required': 'Обязательное поле',
+      'any.required': 'nameRU Обязательное поле',
     }),
     nameEN: Joi.string().required().messages({
-      'any.required': 'Обязательное поле',
+      'any.required': 'nameEN Обязательное поле',
     }),
   },
 });
