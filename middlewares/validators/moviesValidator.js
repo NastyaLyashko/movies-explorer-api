@@ -38,7 +38,7 @@ const postMovieValidator = celebrate({
     movieId: Joi.number().required().messages({
       'any.required': 'movieId Обязательное поле',
     }),
-    thumbnail: Joi.string().required().custom((value, helper) => {
+    thumbnail: Joi.string().custom((value, helper) => {
       if (validator.isURL(value)) {
         return value;
       }
