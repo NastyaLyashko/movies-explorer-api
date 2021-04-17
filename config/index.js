@@ -5,7 +5,7 @@ const config = {
 
   limiter: rateLimit({
     windowMs: 15 * 60 * 1000,
-    max: 100,
+    max: 200,
   }),
 
   MONGO_URL: process.env.MONGO_URL || 'mongodb://localhost:27017/moviedb',
