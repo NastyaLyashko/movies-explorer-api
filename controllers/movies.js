@@ -3,7 +3,8 @@ const Movie = require('../models/movie');
 const { NotFound, BadRequest, Forbidden } = require('../errors');
 
 const getMovies = (req, res, next) => {
-  Movie.find({})
+  const userId = mongoose.Types.ObjectId(req.user._id);
+  Movie.find({owner: userId})
     .orFail(() => {
       throw new NotFound('Фильм не найден');
     })
