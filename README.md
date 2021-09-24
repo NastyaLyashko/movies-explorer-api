@@ -4,5 +4,5 @@
 
 ## Ссылка на проект
 
-84.201.165.225 — публичный IP-адрес сервера
-http://api.lyashko-movies-explorer.students.nomoredomains.icu — домен, по которому к нему можно обратиться.
+178.154.194.169 — публичный IP-адрес сервера
+http://api.lyashko-movies-explor.nomoredomains.club — домен, по которому к нему можно обратиться.
